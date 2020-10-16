@@ -122,4 +122,11 @@ internal class FakeContextTest {
 
         expectThat(fakeDog).hasSize(1)
     }
+
+    @Test
+    fun `given a FakeContext when fakeApp is accessed multiple times it should return the same value multiple times`() {
+        val fakeApp = createDistinctList { subject.fakeApp }
+
+        expectThat(fakeApp).hasSize(1)
+    }
 }
