@@ -32,14 +32,16 @@ class FakeContext(private val faker: Faker = Faker.instance()) {
     private val fakerApp by lazy { faker.app() }
     private val fakerArtist by lazy { faker.artist() }
     private val fakerAvatar by lazy { faker.avatar() }
+    private val fakerBeer by lazy { faker.beer() }
     private val fakerBook by lazy { faker.book() }
     private val fakerBoolean by lazy { faker.bool() }
     private val fakerCat by lazy { faker.cat() }
     private val fakerColor by lazy { faker.color() }
     private val fakerCompany by lazy { faker.company() }
+    private val fakerCrypto by lazy { faker.crypto() }
+    private val fakerDog by lazy { faker.dog() }
     private val fakerInternet by lazy { faker.internet() }
     private val fakerName by lazy { faker.name() }
-    private val fakerDog by lazy { faker.dog() }
 
     /**
      * Provides a [FakeAddress].
@@ -65,6 +67,11 @@ class FakeContext(private val faker: Faker = Faker.instance()) {
      * Provides a [FakeAvatar].
      */
     val fakeAvatar by lazy { FakeAvatar(fakerAvatar) }
+
+    /**
+     * Provides a [FakeBeer].
+     */
+    val fakeBeer by lazy { FakeBeer(fakerBeer) }
 
     /**
      * Provides a [FakeBook].
@@ -100,6 +107,11 @@ class FakeContext(private val faker: Faker = Faker.instance()) {
      * Provides a [FakeCreditCard].
      */
     val fakeCreditCard by lazy { FakeCreditCard.create() }
+
+    /**
+     * Provides a [fakeCrypto].
+     */
+    val fakeCrypto by lazy { FakeCrypto(fakerCrypto) }
 
     /**
      * Provides a [FakeEmailAddress] making use of [fakeName] to help generate parts of the email address.
