@@ -1,7 +1,5 @@
 package dev.fakek.fakes
 
-import dev.fakek.fakers.SemanticVersion
-
 /**
  * FakeApp provides a fake app which includes a name, version, author, and semantic version.
  *
@@ -17,11 +15,11 @@ data class FakeApp(
     val semanticVersion: String
 ) {
 
-    constructor(fakerApp: FakerApp, semanticVersion: SemanticVersion) : this(
+    constructor(fakerApp: FakerApp, fakeSemanticVersion: FakeSemanticVersion) : this(
         name = fakerApp.name(),
         version = fakerApp.version(),
         author = fakerApp.author(),
-        semanticVersion = semanticVersion.toString()
+        semanticVersion = fakeSemanticVersion.toString()
     )
 
 }

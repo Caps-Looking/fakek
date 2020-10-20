@@ -1,15 +1,15 @@
-package dev.fakek.fakers
+package dev.fakek.fakes
 
 import kotlin.random.Random
 
 /**
- * SemanticVersion provides a semantic version which includes major, minor, and patch.
+ * FakeSemanticVersion provides a semantic version which includes major, minor, and patch.
  *
  * @param major is the major number.
  * @param minor is the minor number.
  * @param patch is the patch number.
  */
-class SemanticVersion(private var major: Int, private var minor: Int, private var patch: Int) {
+class FakeSemanticVersion(private var major: Int, private var minor: Int, private var patch: Int) {
 
     companion object {
         internal const val DEFAULT_START = 0

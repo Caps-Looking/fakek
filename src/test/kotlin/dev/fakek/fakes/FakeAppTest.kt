@@ -1,6 +1,5 @@
 package dev.fakek.fakes
 
-import dev.fakek.fakers.SemanticVersion
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.spyk
@@ -22,7 +21,7 @@ internal class FakeAppTest {
         every { version() } returns version
         every { author() } returns author
     }
-    private val semanticVersion = mockk<SemanticVersion>()
+    private val semanticVersion = mockk<FakeSemanticVersion>()
 
     @Test
     fun `given a FakerApp when creating a FakeApp then the correct name should be set`() {
@@ -56,7 +55,7 @@ internal class FakeAppTest {
 
     @Test
     fun `given a FakerApp when creating a FakeApp and changing major semantic version should be different`() {
-        val semanticVersionSpy = spyk<SemanticVersion>()
+        val semanticVersionSpy = spyk<FakeSemanticVersion>()
         every { semanticVersionSpy.toString() } returns semanticVersionString andThen semanticVersionChangedMajorString
 
         val subject1 = FakeApp(fakerApp, semanticVersionSpy)
@@ -69,7 +68,7 @@ internal class FakeAppTest {
 
     @Test
     fun `given a FakerApp when creating a FakeApp and changing minor semantic version should be different`() {
-        val semanticVersionSpy = spyk<SemanticVersion>()
+        val semanticVersionSpy = spyk<FakeSemanticVersion>()
         every { semanticVersionSpy.toString() } returns semanticVersionString andThen semanticVersionChangedMinorString
 
         val subject1 = FakeApp(fakerApp, semanticVersionSpy)
@@ -82,7 +81,7 @@ internal class FakeAppTest {
 
     @Test
     fun `given a FakerApp when creating a FakeApp and changing patch semantic version should be different`() {
-        val semanticVersionSpy = spyk<SemanticVersion>()
+        val semanticVersionSpy = spyk<FakeSemanticVersion>()
         every { semanticVersionSpy.toString() } returns semanticVersionString andThen semanticVersionChangedPatchString
 
         val subject1 = FakeApp(fakerApp, semanticVersionSpy)
