@@ -32,6 +32,7 @@ class FakeContext(private val faker: Faker = Faker.instance()) {
     private val fakerApp by lazy { faker.app() }
     private val fakerArtist by lazy { faker.artist() }
     private val fakerAvatar by lazy { faker.avatar() }
+    private val fakerAviation by lazy { faker.aviation() }
     private val fakerBeer by lazy { faker.beer() }
     private val fakerBook by lazy { faker.book() }
     private val fakerBoolean by lazy { faker.bool() }
@@ -39,10 +40,13 @@ class FakeContext(private val faker: Faker = Faker.instance()) {
     private val fakerColor by lazy { faker.color() }
     private val fakerCompany by lazy { faker.company() }
     private val fakerCrypto by lazy { faker.crypto() }
+    private val fakerDisease by lazy { faker.medical() }
     private val fakerDog by lazy { faker.dog() }
+    private val fakerEducator by lazy { faker.educator() }
     private val fakerInternet by lazy { faker.internet() }
-    private val fakerName by lazy { faker.name() }
     private val fakerJob by lazy { faker.job() }
+    private val fakerName by lazy { faker.name() }
+    private val fakerSSN by lazy { faker.idNumber() }
 
     /**
      * Provides a [FakeAddress].
@@ -68,6 +72,11 @@ class FakeContext(private val faker: Faker = Faker.instance()) {
      * Provides a [FakeAvatar].
      */
     val fakeAvatar by lazy { FakeAvatar(fakerAvatar) }
+
+    /**
+     * Provides a [FakeAviation].
+     */
+    val fakeAviation by lazy { FakeAviation(fakerAviation) }
 
     /**
      * Provides a [FakeBeer].
@@ -115,6 +124,16 @@ class FakeContext(private val faker: Faker = Faker.instance()) {
     val fakeCrypto by lazy { FakeCrypto(fakerCrypto) }
 
     /**
+     * Provides a [FakeDisease].
+     */
+    val fakeDisease by lazy { FakeDisease(fakerDisease) }
+
+    /**
+     * Provides a [FakeEducator].
+     */
+    val fakeEducator by lazy { FakeEducator(fakerEducator) }
+
+    /**
      * Provides a [FakeEmailAddress] making use of [fakeName] to help generate parts of the email address.
      */
     val fakeEmailAddress by lazy { FakeEmailAddress(fakeName) }
@@ -128,6 +147,11 @@ class FakeContext(private val faker: Faker = Faker.instance()) {
      * Provides a [FakePassword].
      */
     val fakePassword by lazy { FakePassword(fakerInternet) }
+
+    /**
+     * Provides a [FakeSSN].
+     */
+    val fakeSSN by lazy { FakeSSN(fakerSSN) }
 
     /**
      * Provides a [FakeUrl].

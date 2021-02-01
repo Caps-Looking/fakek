@@ -82,6 +82,13 @@ internal class FakeContextTest {
     }
 
     @Test
+    fun `given a FakeContext when fakeAviation is accessed multiple times it should return the same value multiple times`() {
+        val fakeAviation = createDistinctList { subject.fakeAviation }
+
+        expectThat(fakeAviation).hasSize(1)
+    }
+
+    @Test
     fun `given a FakeContext when fakeBoolean is accessed multiple times it should return the same value multiple times`() {
         val fakeBoolean = createDistinctList { subject.fakeBoolean }
 
@@ -124,6 +131,20 @@ internal class FakeContextTest {
     }
 
     @Test
+    fun `given a FakeContext when fakeBeer is accessed multiple times it should return the same value multiple times`() {
+        val fakeBeer = createDistinctList { subject.fakeBeer }
+
+        expectThat(fakeBeer).hasSize(1)
+    }
+    
+    @Test
+    fun `given a FakeContext when fakeDisease is accessed multiple times it should return the same value multiple times`() {
+        val fakeDisease = createDistinctList { subject.fakeDisease }
+      
+        expectThat(fakeDisease).hasSize(1)
+    }
+  
+    @Test
     fun `given a FakeContext when fakeDog is accessed multiple times it should return the same value multiple times`() {
         val fakeDog = createDistinctList { subject.fakeDog }
 
@@ -131,17 +152,10 @@ internal class FakeContextTest {
     }
 
     @Test
-    fun `given a FakeContext when fakeApp is accessed multiple times it should return the same value multiple times`() {
-        val fakeApp = createDistinctList { subject.fakeApp }
+    fun `given a FakeContext when fakeEducator is accessed multiple times it should return the same value multiple times`() {
+        val fakeEducator = createDistinctList { subject.fakeEducator }
 
-        expectThat(fakeApp).hasSize(1)
-    }
-
-    @Test
-    fun `given a FakeContext when fakeBeer is accessed multiple times it should return the same value multiple times`() {
-        val fakeBeer = createDistinctList { subject.fakeBeer }
-
-        expectThat(fakeBeer).hasSize(1)
+        expectThat(fakeEducator).hasSize(1)
     }
 
     @Test
@@ -149,5 +163,19 @@ internal class FakeContextTest {
         val fakeJob = createDistinctList { subject.fakeJob }
 
         expectThat(fakeJob).hasSize(1)
+    }
+  
+    @Test
+    fun `given a FakeContext when fakeSSN is accessed multiple times it should return the same value multiple times`() {
+        val fakeSSN = createDistinctList { subject.fakeSSN }
+
+        expectThat(fakeSSN).hasSize(1)
+    }
+
+    @Test
+    fun `given a FakeApp when fakeApp is accessed multiple times it should return the same value multiple times`() {
+        val fakeApp = createDistinctList { subject.fakeApp }
+
+        expectThat(fakeApp).hasSize(1)
     }
 }
